@@ -1,0 +1,13 @@
+{
+    "name": "lejo/sigalrm-reproducer",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Lau Josefsen",
+            "email": "lejo@cego.dk"
+        }
+    ],
+    "require": {
+        "open-telemetry/opentelemetry-auto-pdo": "^0.1.1"
+    }
+}

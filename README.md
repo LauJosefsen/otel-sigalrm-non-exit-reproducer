@@ -2,6 +2,13 @@
 
 Weird behavior when using SIGALRM with OpenTelemetry auto-instrumentation for PDO in PHP.
 
+# Motivation
+Avoid stuck long-running worker processes.
+
+For example a worker that consumes from a database can reach a state where its query never finishes (dead TCP connection etc.) and thus we need to enforce a maximum execution time.
+
+This is often done using `pcntl_alarm` and a signal handler for `SIGALRM`, by simply exiting the process when the alarm is reached, allowing it to be restarted by the orchestrator. Example: https://github.com/laravel/framework/blob/12.x/src/Illuminate/Queue/Worker.php#L213
+
 # What it does:
 
 ```bash

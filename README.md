@@ -33,7 +33,7 @@ The following error is printed to the console:
 reproducer-1  | Warning: PDO::exec(): OpenTelemetry: post hook threw exception, class=PDO function=exec message=null in Unknown on line 0
 ```
 
-it also seems the process reaches a bad state, where it no longers loops the while loop, and eventually gets an out of memory error.
+The process does not exit as expected. Instead it seems to get stuck in a bad state, where it no longers loops the while loop, and eventually gets an out of memory error.
 
 ```
 reproducer-1  | Fatal error: Allowed memory size of 134217728 bytes exhausted (tried to allocate 4096 bytes) in /reproducer.php on line 26
